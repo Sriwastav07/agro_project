@@ -217,12 +217,13 @@ $weatherEmoji = match(true) {
                     <div class="form-group">
                         <label class="form-label" for="crop_id">{{ __('messages.crop_label') }}</label>
                         <select id="crop_id" name="crop_id" class="form-control">
-                            <option value="">{{ __('messages.select_crop') }}</option>
-                            @foreach($crops as $crop)
-                                <option value="{{ $crop->id }}" {{ ($cropId ?? '') == $crop->id ? 'selected' : '' }}>
-                                    {{ $crop->name }}
-                                </option>
-                            @endforeach
+                           <option value="">Select Crop</option>
+                            <option value="wheat">Wheat</option>
+                            <option value="rice">Rice</option>
+                            <option value="cotton">Cotton</option>
+                            <option value="maize">Maize</option>
+                            <option value="sugarcane">Sugarcane</option>
+                            <option value="potato">Potato</option>
                         </select>
                     </div>
 
