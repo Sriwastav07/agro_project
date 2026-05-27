@@ -168,7 +168,7 @@ $weatherEmoji = match(true) {
         </div>
         <h1 style="font-size:2rem;font-weight:900;color:#f1f5f9;letter-spacing:-.03em;margin-bottom:.3rem;">
 
-            @if(auth()->user()->role == 'farmer')
+            @if(auth()->user()->role == 'Farmer')
             Farmer Dashboard
 
             @elseif(auth()->user()->role == 'Expert')
