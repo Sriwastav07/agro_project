@@ -171,7 +171,7 @@ $weatherEmoji = match(true) {
             @if(auth()->user()->role == 'farmer')
             Farmer Dashboard
 
-            @elseif(auth()->user()->role == 'advisory')
+            @elseif(auth()->user()->role == 'Expert')
             Advisory Dashboard
 
             @else
