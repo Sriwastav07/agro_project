@@ -174,6 +174,9 @@ $weatherEmoji = match(true) {
             @elseif(auth()->user()->role == 'Expert')
             Advisory Dashboard
 
+            @elseif(auth()->user()->role == 'Admin')
+            Admin Dashboard
+            
             @else
             Dashboard
             @endif
