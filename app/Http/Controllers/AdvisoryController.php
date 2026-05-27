@@ -54,7 +54,7 @@ class AdvisoryController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'crop_id'           => 'required|integer|exists:crops,id',
+            'crop_id'           => 'required|string|exists:crops,id',
             'season'            => 'required|in:Spring,Summer,Monsoon,Winter',
             'weather_condition' => 'required|in:Clear,Cloudy,Rainy,Stormy,Cold',
             'advice'            => 'required|string|min:10|max:1000',
@@ -85,7 +85,7 @@ class AdvisoryController extends Controller
     public function update(Request $request, Advisory $advisory)
     {
         $validated = $request->validate([
-            'crop_id'           => 'required|integer|exists:crops,id',
+            'crop_id'           => 'required|string|exists:crops,id',
             'season'            => 'required|in:Spring,Summer,Monsoon,Winter',
             'weather_condition' => 'required|in:Clear,Cloudy,Rainy,Stormy,Cold',
             'advice'            => 'required|string|min:10|max:1000',
@@ -117,7 +117,7 @@ class AdvisoryController extends Controller
     public function filter(Request $request)
     {
         $request->validate([
-            'crop_id' => 'nullable|integer|exists:crops,id',
+            'crop_id' => 'nullable|string|exists:crops,id',
             'season'  => 'nullable|string|in:Spring,Summer,Monsoon,Winter',
         ]);
 
