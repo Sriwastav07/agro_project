@@ -167,7 +167,17 @@ $weatherEmoji = match(true) {
             <span style="font-size:.75rem;font-weight:600;color:var(--theme-accent);text-transform:uppercase;letter-spacing:.1em;">{{ __('messages.live_intelligence') }}</span>
         </div>
         <h1 style="font-size:2rem;font-weight:900;color:#f1f5f9;letter-spacing:-.03em;margin-bottom:.3rem;">
-            {{ __('messages.farmer_dashboard') }}
+
+            @if(auth()->user()->role == 'farmer')
+            Farmer Dashboard
+
+            @elseif(auth()->user()->role == 'advisory')
+            Advisory Dashboard
+
+            @else
+            Dashboard
+            @endif
+
         </h1>
         <p style="font-size:.9rem;color:rgba(148,163,184,.55);">
             {{ __('messages.dash_subtitle') }}
